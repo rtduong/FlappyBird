@@ -1,5 +1,6 @@
 import React from 'react';
 import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { getForecast } from './services/fetchWeather';
 
 export default class App extends React.Component {
 
@@ -16,6 +17,7 @@ export default class App extends React.Component {
     search = (text) => {
       // TODO: Call API
       alert('You searched for ' + text)
+      getForecast(98125);
     };
   }
 
@@ -25,7 +27,7 @@ export default class App extends React.Component {
 
         <View style={styles.flexlocationInput}>
           <TextInput style={styles.locationInput}
-            placeholder="QAZIP Code"
+            placeholder="ZIP Code"
             onChangeText={(text) => handleLocationInput(text)}
           />
 
